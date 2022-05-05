@@ -5,26 +5,24 @@ Created on Tue May  3 20:23:02 2022
 @author: gouthaman
 """
 import warnings  # helps to remove warnings 
-
 import numpy as np
 import pandas as pd
-
 import matplotlib.pyplot as plt
-
 import seaborn as sns
-
 import dabl as db
 import numpy as np
-
 import joblib 
-
 from xgboost import XGBRFRegressor
 
-url = "F:\\TMLC\\BlueBerry Prediction\\Dataset\WildBlueberryPollinationSimulationData.csv"
+import os
+currpath =os.path.dirname(os.path.realpath(__file__))
+print("path: {}".format(currpath))
 
-df = pd.read_csv(url)
+#url = "F:\\TMLC\\BlueBerry Prediction\\Dataset\WildBlueberryPollinationSimulationData.csv"
+path=(currpath + "\Dataset\WildBlueberryPollinationSimulationData.csv")
+df = pd.read_csv(path)
 
-#print(df.head())
+print(df.head())
 
 features=['seeds','fruitset','osmia','fruitmass','honeybee','andrena','RainingDays','MaxOfLowerTRange','AverageRainingDays','AverageOfUpperTRange']
 xgbref =joblib.load("F://TMLC/BlueBerry Prediction//Lregressor.pkl")
