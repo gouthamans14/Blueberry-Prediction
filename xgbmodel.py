@@ -16,16 +16,16 @@ from xgboost import XGBRFRegressor
 
 import os
 currpath =os.path.dirname(os.path.realpath(__file__))
-print("path: {}".format(currpath))
+#print("path: {}".format(currpath))
 
 #url = "F:\\TMLC\\BlueBerry Prediction\\Dataset\WildBlueberryPollinationSimulationData.csv"
-path=(currpath + "\Dataset\WildBlueberryPollinationSimulationData.csv")
+path=(currpath + "/Dataset/WildBlueberryPollinationSimulationData.csv")
 df = pd.read_csv(path)
 
-print(df.head())
+#print(df.head())
 
 features=['seeds','fruitset','osmia','fruitmass','honeybee','andrena','RainingDays','MaxOfLowerTRange','AverageRainingDays','AverageOfUpperTRange']
-xgbref =joblib.load("F://TMLC/BlueBerry Prediction//Lregressor.pkl")
+xgbref =joblib.load(currpath +"\Lregressor.pkl")
 #print(xgbref.get_booster().feature_names)
 
 def predict_yield(attributes : np.ndarray ):
