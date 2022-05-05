@@ -25,7 +25,7 @@ df = pd.read_csv(path)
 #print(df.head())
 
 features=['seeds','fruitset','osmia','fruitmass','honeybee','andrena','RainingDays','MaxOfLowerTRange','AverageRainingDays','AverageOfUpperTRange']
-xgbref =joblib.load(currpath +"/Lregressor.pkl")
+xgbref =joblib.load(currpath +"/LRegressor.pkl")
 #print(xgbref.get_booster().feature_names)
 
 def predict_yield(attributes : np.ndarray ):
